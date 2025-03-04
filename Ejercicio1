@@ -1,0 +1,18 @@
+import numpy as np
+
+# Generar aleatoriamente los votos para 30 candidatos
+np.random.seed(0)  # Para reproducibilidad
+votos = np.random.randint(50, 200, size=30)
+
+# Números de candidatos del 1 al 30
+candidatos = np.arange(1, 31)
+
+# Ordenar los votos de mayor a menor
+indices_ordenados = np.argsort(votos)[::-1]
+votos_ordenados = votos[indices_ordenados]
+candidatos_ordenados = candidatos[indices_ordenados]
+
+# Imprimir resultados
+print("Candidato\tVotos")
+for candidato, voto in zip(candidatos_ordenados, votos_ordenados):
+    print(f"{candidato}\t\t{voto}")
